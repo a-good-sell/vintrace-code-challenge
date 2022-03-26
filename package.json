@@ -1,0 +1,24 @@
+{
+  "name": "vintrace-code-challenge",
+  "version": "1.0.0",
+  "description": "Vintrace code challenge submission",
+  "main": "index.js",
+  "repository": "https://github.com/a-good-sell/vintrace-code-challenge.git",
+  "author": "Alec Goodsell",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "serve": "webpack-dev-server --open"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.4",
+    "html-webpack-plugin": "^5.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  }
+}

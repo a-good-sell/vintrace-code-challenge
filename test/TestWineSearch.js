@@ -1,15 +1,25 @@
-import { describe, beforeAll, it, expect } from "jasmine-core";
-
 import WineSearch from "../src/pages/WineSearch";
 
 describe("TestWineSearch", () => {
     let wineSearch = null;
 
     beforeAll(() => {
-        wineSarch = new WineSearch();
+        wineSearch = new WineSearch();
     });
 
     it("Should return search results", () => {
-        expect(3).toEqual(3);
+        let searchResults = wineSearch.keywordSearch("201");
+        expect(searchResults.length).toEqual(2);
+
+        for (let result of searchResults) {
+            expect(result.props.matchField).toEqual("description");
+        }
+
+        searchResults = wineSearch.keywordSearch("11YV");
+        expect(searchResults.length).toEqual(2);
+
+        for (let result of searchResults) {
+            expect(result.props.matchField).toEqual("lotCode");
+        }
     });
 });

@@ -26,7 +26,16 @@ export default class WineSearch extends Component {
             let searchPosition = -1;
 
             for (let candidateField of SEARCH_FIELDS) {
+                if (!wineLot[candidateField]) {
+                    continue;
+                }
 
+                searchPosition = wineLot[candidateField].search(keyword);
+
+                if (searchPosition > -1) {
+                    searchField = candidateField;
+                    break;
+                }
             }
 
             return {
@@ -34,11 +43,12 @@ export default class WineSearch extends Component {
                 searchPosition: searchPosition
             }
         }).filter((result) => {
-            return result.searchPosition > 0;
+            return result.searchPosition > -1;
         }).map((result) => {
             return new SearchResult({
-                searchField: result.searchField,
-                searchPosition: result.searchPosition
+                matchString: keyword,
+                matchField: result.searchField,
+                matchPosition: result.searchPosition
             });
         })
 

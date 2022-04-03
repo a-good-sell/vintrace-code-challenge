@@ -4,7 +4,9 @@ export default class ErrorPage extends Component {
     render() {
         return (
             <div className="errorPage">
-                <h1>Error</h1>
+                <header>
+                    <h3>Error 404</h3>
+                </header>
             </div>
         );
     }

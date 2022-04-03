@@ -32,7 +32,11 @@ export default class WineSearch extends Component {
 
     render() {
         const searchResultComponents = this.state.searchResults.map((searchResult) => {
-            return <SearchResult {...searchResult} key={searchResult.matchObject.lotCode}/>
+            return (
+                <SearchResult 
+                    {...searchResult} 
+                    key={searchResult.matchObject.lotCode} />
+            );
         })
 
         return (

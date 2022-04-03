@@ -1,10 +1,17 @@
-import { Component } from "react"
+import { Component } from "react";
+
+import mockWineData from "../../data/mockWineData";
+
+import RedIcon from "../../images/Red.svg";
 
 export default class ProductView extends Component {
     render() {
         return (
             <div className="productView">
-                <h1>Product View</h1>
+                <header>
+                    <img src={RedIcon} alt="Wine icon"/>
+                    <h1>Product View</h1>
+                </header>
             </div>
         );
     }

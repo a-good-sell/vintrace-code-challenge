@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Navigate } from "react-router-dom";
 
 /**
  * @typedef SearchResultProps
@@ -8,17 +9,30 @@ import { Component } from "react";
  * @property {Number} matchPosition
  */
 
+/**
+ * @typedef SearchResultState
+ * @property {Boolean} selected
+ */
+
 export default class SearchResult extends Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            selected: false
+        };
+
         this.getSearchResultFormattedText = this.getSearchResultFormattedText.bind(this);
         this.getFormattedVolume = this.getFormattedVolume.bind(this);
+        this.navigateToProduct = this.navigateToProduct.bind(this);
     }
 
     render() {
         return (
-            <div className="searchResult">
+            <div className="searchResult" onClick={this.navigateToProduct}>
+                {this.state.selected &&
+                    <Navigate to={"product/" + this.props.matchObject.lotCode} replace={true} />
+                }
                 <div className="searchResultLeft">
                     <div className="lotCode">
                         {this.getSearchResultFormattedText("lotCode")}
@@ -76,5 +90,9 @@ export default class SearchResult extends Component {
      */
      getFormattedVolume() {
         return parseFloat(this.props.matchObject.volume).toLocaleString('en') + " L";
+    }
+
+    navigateToProduct() {
+        this.setState({ selected: true });
     }
 }

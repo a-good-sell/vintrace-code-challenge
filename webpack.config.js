@@ -12,8 +12,12 @@ module.exports = {
     },
     "output": {
         filename: '[name].bundle.js',
+        publicPath: '/',
         path: path.resolve(__dirname, 'dist'),
         clean: true
+    },
+    "devServer": {
+        historyApiFallback: true,
     },
     "plugins": [
         new HtmlWebpackPlugin({

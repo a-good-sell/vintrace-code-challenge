@@ -31,7 +31,7 @@ export default class SearchResult extends Component {
         return (
             <div className="searchResult" onClick={this.navigateToProduct}>
                 {this.state.selected &&
-                    <Navigate to={"product/" + this.props.matchObject.lotCode} replace={true} />
+                    <Navigate to={"product/" + this.props.matchObject.lotCode} replace={false} />
                 }
                 <div className="searchResultLeft">
                     <div className="lotCode">

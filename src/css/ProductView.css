@@ -1,0 +1,51 @@
+.productView {
+    min-width: 800px;
+}
+
+.productView header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.productView .headerTitle {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 45px;
+}
+
+.productView .headerSubtitle {
+    height: 33px;
+}
+
+.productView  .headerTitle img {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+}
+
+.productView table {
+    width: 100%;
+    padding: 0 16px;
+    margin-top: 16px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-size: 18px;
+}
+
+.productView  tr {
+    height: 32px;
+}
+
+.productView th {
+    text-align: left;
+    font-weight: 400;
+}
+
+.productView td {
+    text-align: right;
+    font-weight: 300;
+    color: #242525;
+}

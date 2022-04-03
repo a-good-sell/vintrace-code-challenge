@@ -1,18 +1,19 @@
 .wineSearch {
+    min-width: 624px;
     position: relative;
 }
 
-header {
+.wineSearch header {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-header > h3{
+.wineSearch header > h3{
    margin-right: 12px;
 }
 
-.textInputWrapper {
+.wineSearch .textInputWrapper {
     width: 100%;
     height: 48px;
     position: relative;
@@ -21,20 +22,20 @@ header > h3{
     background: #fff
 }
 
-img.searchIcon {
+.wineSearch img.searchIcon {
     position: absolute;
     top: 12px;
     left: 12px;
 }
 
-img.clearIcon {
+.wineSearch img.clearIcon {
     position: absolute;
     top: 18px;
     right: 18px;
     cursor: pointer;
 }
 
-.textInputWrapper input {
+.wineSearch .textInputWrapper input {
     position: absolute;
     width: 500px;
     left: 44px;
@@ -48,17 +49,17 @@ img.clearIcon {
     background: none;
 }
 
-.textInputWrapper input::placeholder {
+.wineSearch .textInputWrapper input::placeholder {
     color: #ccc;
 }
 
-.searchResultsWrapper {
+.wineSearch .searchResultsWrapper {
     display: flex;
     flex-direction: column;
     background-color: #fff;
 }
 
-.searchResult {
+.wineSearch .searchResult {
     width: 600px;
     height: 56px;
     margin: 0 12px;
@@ -75,34 +76,34 @@ img.clearIcon {
     line-height: 18px;
 }
 
-.searchResultLeft, .searchResultRight {
+.wineSearch .searchResultLeft, .searchResultRight {
     padding: 10px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.searchResultRight {
+.wineSearch .searchResultRight {
     text-anchor: right;
     color: #0f1010;
     align-items: flex-end;
 }
 
-.searchResultLeft {
+.wineSearch .searchResultLeft {
     color: #0f1010;
 }
 
-.searchResultRight {
+.wineSearch .searchResultRight {
     text-align: right;
     color: #0f1010;
     opacity: 0.6
 }
 
-.lotCode {
+.wineSearch .lotCode {
     font-size: 15px;
     font-weight: 300;
 }
 
-.matchString {
+.wineSearch .matchString {
     color: #00ada8;
 }

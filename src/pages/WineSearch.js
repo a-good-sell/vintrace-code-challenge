@@ -6,6 +6,7 @@ import "../css/WineSearch.css";
 
 import ICON from "../../images/ICON.svg";
 import SEARCH from "../../images/Search.svg";
+import CLOSE from "../../images/Close.svg";
 
 import mockWineData from "../../data/mockWineData";
 
@@ -26,6 +27,7 @@ export default class WineSearch extends Component {
         }
 
         this.onUpdateSearchInput = this.onUpdateSearchInput.bind(this);
+        this.onClearSearch = this.onClearSearch.bind(this);
     }
 
     render() {
@@ -46,11 +48,14 @@ export default class WineSearch extends Component {
                             type="text" 
                             value={this.state.searchInput}
                             onChange={this.onUpdateSearchInput} />
-                        <img src={SEARCH} ></img>
+                        <img className="searchIcon" src={SEARCH} alt="Search icon"></img>
+                        {this.state.searchInput.length > 0 &&
+                            <img className="clearIcon" src={CLOSE} alt="Clear icon" onClick={this.onClearSearch}></img>
+                        }
                     </div> 
                     {this.state.searchResults.length > 0 &&
                         <div className="searchResultsWrapper">
-                            
+                            {searchResultComponents}
                         </div>
                     }
                 </main>
@@ -62,6 +67,14 @@ export default class WineSearch extends Component {
         this.setState({
             searchInput: event.target.value,
             searchResults: this.keywordSearch(event.target.value)
+        });
+        event.preventDefault();
+    }
+
+    onClearSearch(event) {
+        this.setState({
+            searchInput: "",
+            searchResults: []
         });
         event.preventDefault();
     }

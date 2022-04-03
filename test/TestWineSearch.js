@@ -12,14 +12,19 @@ describe("TestWineSearch", () => {
         expect(searchResults.length).toEqual(2);
 
         for (let result of searchResults) {
-            expect(result.props.matchField).toEqual("description");
+            expect(result.matchField).toEqual("description");
         }
 
         searchResults = wineSearch.keywordSearch("11YV");
         expect(searchResults.length).toEqual(2);
 
         for (let result of searchResults) {
-            expect(result.props.matchField).toEqual("lotCode");
+            expect(result.matchField).toEqual("lotCode");
         }
+    });
+
+    it("Should return empty array if blank keyword", () => {
+        let searchResults = wineSearch.keywordSearch("");
+        expect(searchResults.length).toEqual(0);
     });
 });

@@ -21,10 +21,17 @@ header > h3{
     background: #fff
 }
 
-.textInputWrapper img {
+img.searchIcon {
     position: absolute;
     top: 12px;
     left: 12px;
+}
+
+img.clearIcon {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    cursor: pointer;
 }
 
 .textInputWrapper input {
@@ -43,4 +50,59 @@ header > h3{
 
 .textInputWrapper input::placeholder {
     color: #ccc;
+}
+
+.searchResultsWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.searchResult {
+    width: 600px;
+    height: 56px;
+    margin: 0 12px;
+    cursor: pointer;
+
+    border-bottom: 1px solid #e8e8e8;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;;
+
+    font-family: "Montserrat";
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.searchResultLeft, .searchResultRight {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.searchResultRight {
+    text-anchor: right;
+    color: #0f1010;
+    align-items: flex-end;
+}
+
+.searchResultLeft {
+    color: #0f1010;
+}
+
+.searchResultRight {
+    text-align: right;
+    color: #0f1010;
+    opacity: 0.6
+}
+
+.lotCode {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.matchString {
+    color: #00ada8;
 }
